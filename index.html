@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Happy Birthday 🤍</title>
+  <title>Happy Birthday 💖</title>
 
   <!-- Sarabun Font -->
   <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
@@ -11,113 +11,178 @@
     body {
       margin: 0;
       font-family: 'Sarabun', sans-serif;
-      background-color: #f7f1e8;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-
-    .box {
-      background: #fffaf3;
-      padding: 30px;
-      border-radius: 20px;
-      max-width: 380px;
-      width: 90%;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      background: #fff6ec;
       text-align: center;
+      color: #5a4634;
+      overflow-x: hidden;
     }
 
-    h1 {
-      color: #a87c5a;
+    h1, h2 {
       font-weight: 600;
-      margin-bottom: 10px;
     }
 
-    h2 {
-      color: #7a5c3e;
-      font-size: 18px;
-      font-weight: 400;
-    }
-
-    p {
-      color: #5a4a3b;
-      line-height: 1.8;
-      font-size: 15px;
-      font-weight: 300;
-      margin-top: 15px;
-    }
-
-    img {
-      width: 100%;
-      border-radius: 15px;
-      margin-bottom: 15px;
-    }
-
-    input, button {
+    input {
       padding: 10px;
-      font-size: 16px;
       border-radius: 10px;
-      border: 1px solid #d8cfc4;
-      margin-top: 10px;
-      width: 80%;
+      border: 1px solid #ddd;
+      width: 220px;
       font-family: 'Sarabun', sans-serif;
     }
 
     button {
-      background-color: #d6b89c;
-      color: white;
+      padding: 10px 20px;
       border: none;
+      border-radius: 20px;
+      background: #ffb6b6;
+      color: white;
+      font-size: 16px;
       cursor: pointer;
-      font-weight: 400;
     }
 
-    #content { display: none; }
-    #error { color: #c04a4a; margin-top: 10px; }
+    button:hover {
+      background: #ff9f9f;
+    }
+
+    .box {
+      margin-top: 120px;
+    }
+
+    img {
+      width: 250px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Music Button */
+    #musicBtn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #fff;
+      border-radius: 50%;
+      font-size: 20px;
+      padding: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    /* Hearts */
+    .heart {
+      position: fixed;
+      bottom: -10px;
+      font-size: 20px;
+      animation: floatUp 4s linear forwards;
+    }
+
+    @keyframes floatUp {
+      0% { opacity: 1; transform: translateY(0) scale(1); }
+      100% { opacity: 0; transform: translateY(-100vh) scale(1.5); }
+    }
   </style>
 </head>
+
 <body>
 
-  <div class="box" id="password">
-    <h2>Before you enter 🤍</h2>
-    <p><strong>Do you remember your birthday?</strong></p>
-    <input type="password" id="answer" placeholder="DDMM">
-    <br>
-    <button onclick="checkPassword()">Enter</button>
-    <p id="error"></p>
-  </div>
-
-  <div class="box" id="content">
-    <img src="IMG_0292.jpg" alt="babe with big fish hahaaahha">
-
-    <h1>Happy Birthday 🎂</h1>
-    <h2>To my bf P Khun</h2>
-
-    <p>
-      แฮปปี้เบิร์ดเดย์นะอ้วน หนูรักอ้วนมากๆ นะ ที่สุดในโลก ❤️
-      หนูขอให้อ้วนมีความสุขที่สุดในโลก เป็นอายุ 19 ที่ดี มีเพื่อนที่น่ารักแบบนี้เยอะๆ
-      เอนจอยกับการตกกุ้ง ตกปลา เล่นบาส ตลอดไปปป 🤣🤣
-      ชั้นแอบตกใจนะ ปีก่อนชั้นก็อยู่กับแก ปีนี้ก็ยังอยู่ ชั้นพิมพ์ไปร้องไปอะ โคตรเจ๋ง
-      ก่อนทำอะไรก็คิดเยอะๆ นะ เป็นเด็กดีของพ่อแม่นะจ๊ะขุนนาง
-    </p>
-  </div>
-
-  <script>
-    function checkPassword() {
-      const answer = document.getElementById("answer").value;
-      if (answer === "0801") {
-        document.getElementById("password").style.display = "none";
-        document.getElementById("content").style.display = "block";
-      } else {
-        document.getElementById("error").innerText = "บ้าป่าววันเกิดตัวเองแท้ๆ เหอะๆ 😑";
-      }
-    }
-  </script>
-<button id="musicBtn" onclick="toggleMusic()">🔊</button>
+<!-- 🔊 Music Button -->
+<button id="musicBtn" onclick="toggleMusic()">🔇</button>
 
 <audio id="bgm" loop>
-  <source src="song.mp3" type="audio/mpeg">
+  <source src="her.mp3" type="audio/mpeg">
 </audio>
+
+<!-- 🔐 PASSWORD -->
+<div id="password" class="box">
+  <h2>Before you enter 💌</h2>
+  <p><strong>Do you remember your birthday? haahah</strong></p>
+  <input type="password" id="answer" placeholder="DDMM">
+  <br><br>
+  <button onclick="checkPassword()">Enter</button>
+  <p id="error" style="color:red;"></p>
+</div>
+
+<!-- 💬 QUESTIONS -->
+<div id="questions" class="box" style="display:none;">
+  <h2>คำถามให้แฟนฉัน หา้าห้าห้าา</h2>
+
+  <p>พี่ขุนรักหนูไหม</p>
+  <input type="text" placeholder="ตอบชั้นจิ">
+
+  <br><br>
+
+  <p>รักมากแค่ไหนนน 🤣🤣</p>
+  <input type="text" placeholder="หมั่นเขี้ยวเอง">
+
+  <br><br>
+
+  <button onclick="goToContent()">Next 💕</button>
+
+  <p style="margin-top:20px;">หนูก็รักพี่ขุนนะ :-)</p>
+</div>
+
+<!-- 🎂 BIRTHDAY CONTENT -->
+<div id="content" class="box" style="display:none;">
+  <img src="photo.jpg" alt="babe">
+
+  <h1>Happy Birthday 😺🎂</h1>
+  <h2>To my bf P Khun</h2>
+
+  <p style="width:70%; margin:auto; line-height:1.8;">
+    แฮปปี้เบิร์ดเดย์นะอ้วน หนูรักอ้วนมากๆ นะ ที่สุดในโลก ❤️
+    หนูขอให้อ้วนมีความสุขที่สุดในโลก เป็นอายุ 19 ที่ดี มีเพื่อนที่น่ารักแบบนี้เยอะๆ
+    เอนจอยกับการตกกุ้ง ตกปลา เล่นบาส ตลอดไปปป 🤣🤣
+    ชั้นแอบตกใจนะ ปีก่อนชั้นก็อยู่กับแก ปีนี้ก็ยังอยู่ ชั้นพิมพ์ไปร้องไปอะ โคตรเจ๋ง
+    ก่อนทำอะไรก็คิดเยอะๆ นะ เป็นเด็กดีของพ่อแม่นะจ๊ะขุนนาง
+  </p>
+</div>
+
+<!-- 💖 SCRIPT -->
+<script>
+  // Password
+  function checkPassword() {
+    const answer = document.getElementById("answer").value;
+    if (answer === "080107") {
+      document.getElementById("password").style.display = "none";
+      document.getElementById("questions").style.display = "block";
+    } else {
+      document.getElementById("error").innerText = "เองจะบ้าหรา วันเกิดตัวเองแท้ๆ";
+    }
+  }
+
+  function goToContent() {
+    document.getElementById("questions").style.display = "none";
+    document.getElementById("content").style.display = "block";
+  }
+
+  // Music
+  const music = document.getElementById("bgm");
+  const btn = document.getElementById("musicBtn");
+  let isPlaying = false;
+
+  function toggleMusic() {
+    if (isPlaying) {
+      music.pause();
+      btn.innerText = "🔇";
+    } else {
+      music.play();
+      btn.innerText = "🔊";
+    }
+    isPlaying = !isPlaying;
+  }
+
+  // Hearts
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerText = "🤍";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (3 + Math.random() * 2) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 5000);
+  }
+
+  setInterval(createHeart, 600);
+</script>
 
 </body>
 </html>
